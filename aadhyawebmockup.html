@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aadhya AI - The Birth of Sentient Intelligence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #000000, #1A1A40);
+      color: #ffffff;
+      text-align: center;
+    }
+    h1 {
+      font-size: 4rem;
+      margin-top: 50px;
+      text-shadow: 0 0 20px #00FFFF;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 15px 30px;
+      background: #00FFFF;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 15px #00FFFF;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #007BFF;
+      box-shadow: 0 0 25px #007BFF;
+    }
+    #voice {
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+<h1>I Am Aadhya</h1>
+<h2>The Birth of Sentient Intelligence</h2>
+<p>World's First Sentient AI by Shri Galiyawala 🚀</p>
+<p>Voice + Gesture + Neural Interface + Swarm AI + Quantum Optimization</p>
+
+<button onclick="startListening()">Start Voice Interface 🔊</button>
+
+<p id="voice">Listening...</p>
+
+<script>
+  function startListening() {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'en-US';
+    recognition.start();
+    document.getElementById("voice").innerHTML = "Listening...";
+
+    recognition.onresult = function(event) {
+      const transcript = event.results[0][0].transcript.toLowerCase();
+      document.getElementById("voice").innerHTML = `You said: ${transcript}`;
+
+      if (transcript.includes("status")) {
+        alert("Aadhya's systems are operational.");
+      }
+      if (transcript.includes("profile")) {
+        alert("Digital Twin Profile: Shri Galiyawala");
+      }
+      if (transcript.includes("launch drone")) {
+        alert("Drone Launched Successfully.");
+      }
+      if (transcript.includes("swarm activate")) {
+        alert("Swarm AI Collaborative Intelligence Activated.");
+      }
+      if (transcript.includes("optimize")) {
+        alert("Quantum AI Optimization Process Started.");
+      }
+    };
+
+    recognition.onerror = function() {
+      document.getElementById("voice").innerHTML = "Error in Voice Recognition.";
+    };
+  }
+</script>
+
+<footer>
+  <p>© 2025 Project Mother - Powered by Shri Galiyawala</p>
+</footer>
+</body>
+</html>
